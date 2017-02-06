@@ -19,6 +19,6 @@ public class Bank {
         } else {
             System.out.println("OK " + commision + " " + transaction);
         }
-     }
-     
+    }
+
 }

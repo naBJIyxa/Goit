@@ -3,6 +3,8 @@ package Module2.Task1;
     public class HomeWork1 {
         public static void main(String[] args) {
 
+            HomeWork1 homeWork1 = new HomeWork1();
+
             int[] arrayInt = new int[10];
             for(int i=0; i<arrayInt.length; i++) {
                 arrayInt[i] = (int)((Math.random() * 200) - 100);
@@ -13,30 +15,30 @@ package Module2.Task1;
                 arrayDouble[i] = (Math.random() * 200) - 100;
             }
 
-            sum(arrayInt);
-            sum(arrayDouble);
+            homeWork1.sum(arrayInt);
+            homeWork1.sum(arrayDouble);
 
-            min(arrayInt);
-            min(arrayDouble);
+            homeWork1.min(arrayInt);
+            homeWork1.min(arrayDouble);
 
-            max(arrayInt);
-            max(arrayDouble);
+            homeWork1.max(arrayInt);
+            homeWork1.max(arrayDouble);
 
-            maxPositive(arrayInt);
-            maxPositive(arrayDouble);
+            homeWork1.maxPositive(arrayInt);
+            homeWork1.maxPositive(arrayDouble);
 
-            multiplication(arrayInt);
-            multiplication(arrayDouble);
+            homeWork1.multiplication(arrayInt);
+            homeWork1.multiplication(arrayDouble);
 
-            modulus(arrayInt);
-            modulus(arrayDouble);
+            homeWork1.modulus(arrayInt);
+            homeWork1.modulus(arrayDouble);
 
-            secondLargest(arrayInt);
-            secondLargest(arrayDouble);
+            homeWork1.secondLargest(arrayInt);
+            homeWork1.secondLargest(arrayDouble);
 
         }
 
-        private static void sum(int array[]){
+        public void sum(int array[]){
             int sum=0;
             for (int anArray : array) {
                 sum = sum + anArray;
@@ -44,7 +46,7 @@ package Module2.Task1;
             System.out.println("int sum = " + sum);
         }
 
-        private static void sum(double array[]){
+        public void sum(double array[]){
             double sum=0;
             for (double anArray : array) {
                 sum = sum + anArray;
@@ -52,7 +54,7 @@ package Module2.Task1;
             System.out.println("double sum = " + sum);
         }
 
-        private static void min(int array[]){
+        public void min(int array[]){
             int min = array[0];
             for (int anArray : array) {
                 if (min > anArray) {
@@ -62,7 +64,7 @@ package Module2.Task1;
             System.out.println("int min = " + min);
         }
 
-        private static void min(double array[]){
+        public void min(double array[]){
             double min = array[0];
             for (double anArray : array) {
                 if (min > anArray) {
@@ -72,7 +74,7 @@ package Module2.Task1;
             System.out.println("double min = " + min);
         }
 
-        private static void max(int array[]){
+        public void max(int array[]){
             int max = array[0];
             for (int anArray : array) {
                 if (max < anArray) {
@@ -82,7 +84,7 @@ package Module2.Task1;
             System.out.println("int max = " + max);
         }
 
-        private static void max(double array[]){
+        public void max(double array[]){
             double max = array[0];
             for (double anArray : array) {
                 if (max < anArray) {
@@ -92,7 +94,7 @@ package Module2.Task1;
             System.out.println("double max = " + max);
         }
 
-        private static void maxPositive(int array[]){
+        public void maxPositive(int array[]){
             int maxPos = array[0];
             for (int anArray : array) {
 
@@ -104,7 +106,7 @@ package Module2.Task1;
             else System.out.println("int maxPositive = " + maxPos);
         }
 
-        private static void maxPositive(double array[]){
+        public void maxPositive(double array[]){
             double maxPos = array[0];
             for (double anArray : array) {
                 if (maxPos < anArray) {
@@ -115,7 +117,7 @@ package Module2.Task1;
             else System.out.println("double maxPositive = " + maxPos);
         }
 
-        private static void multiplication(int array[]){
+        public void multiplication(int array[]){
             int multip = array[0];
             for (int anArray : array) {
                 multip = multip * anArray;
@@ -123,7 +125,7 @@ package Module2.Task1;
             System.out.println("int multiplication = " + multip);
         }
 
-        private static void multiplication(double array[]){
+        public void multiplication(double array[]){
             double multip = array[0];
             for(double anArray : array) {
                 multip = multip * anArray;
@@ -131,19 +133,19 @@ package Module2.Task1;
             System.out.println("double multiplication = " + multip);
         }
 
-        private static void modulus(int array[]){
+        public void modulus(int array[]){
             int mod = array[0];
             mod = mod % array[array.length-1];
             System.out.println("int modulus = " + mod);
         }
 
-        private static void modulus(double array[]){
+        public void modulus(double array[]){
             double mod = array[0];
             mod = mod % array[array.length-1];
             System.out.println("double modulus = " + mod);
         }
 
-        private static void secondLargest(int array[]){
+        public void secondLargest(int array[]){
             int secLarg = array[0];
             int largest = array[1];
 
@@ -164,7 +166,7 @@ package Module2.Task1;
             System.out.println("int secondLargest = " + secLarg);
         }
 
-        private static void secondLargest(double array[]){
+        public void secondLargest(double array[]){
             double secLarg = array[0];
             double largest = array[1];
 
@@ -184,4 +186,5 @@ package Module2.Task1;
             }
             System.out.println("double secondLargest = " + secLarg);
         }
+
     }
