@@ -20,6 +20,34 @@ public class CollegeStudent extends Student {
         this.rating = rating;
         this.id = id;
     }
+
+    //Setters
+
+    public void setCollegeName(String collegeName) {
+        this.collegeName = collegeName;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    //Getters
+
+    public String getCollegeName() {
+        return collegeName;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public long getId() {
+        return id;
+    }
 }
 
 

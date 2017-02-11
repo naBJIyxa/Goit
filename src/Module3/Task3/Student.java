@@ -4,7 +4,7 @@ public class Student {
     private String firstName;
     private String lastName;
     private int group;
-    protected Course[] coursesTaken;
+    private Course[] coursesTaken;
     private int age;
 
     public Student(String firstName, String lastName, int group) {
@@ -18,12 +18,48 @@ public class Student {
         this.coursesTaken = coursesTaken;
     }
 
-    public void setCoursesTaken(Course... coursesTaken) {
+    //Setters
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setGroup(int group) {
+        this.group = group;
+    }
+
+    public void setCoursesTaken(Course[] coursesTaken) {
         this.coursesTaken = coursesTaken;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    //Getters
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public int getGroup() {
+        return group;
     }
 
     public Course[] getCoursesTaken() {
         return coursesTaken;
+    }
+
+    public int getAge() {
+        return age;
     }
 }
 

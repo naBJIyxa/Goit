@@ -18,6 +18,26 @@ public class SpecialStudent extends CollegeStudent {
         this.secretKey = secretKey;
         this.email = email;
     }
+
+    //Setters
+
+    public void setSecretKey(long secretKey) {
+        this.secretKey = secretKey;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    //Getters
+
+    public long getSecretKey() {
+        return secretKey;
+    }
+
+    public String getEmail() {
+        return email;
+    }
 }
 
 /*

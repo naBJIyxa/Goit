@@ -3,7 +3,7 @@ package Module3.Task4;
 public class User {
 
     private String name;
-    private int balance;
+    private int balance = 100;
     private int monthsOfEmployment;
     private String companyName;
     private int salary;
@@ -18,20 +18,28 @@ public class User {
         this.currency = currency;
     }
 
-    void paySalary() {
-        // добавляет заработную плату к балансу пользователя
+    // добавляет заработную плату к балансу пользователя
+    void paySalary(int salary) {
+        this.balance += salary;
     }
 
-    withdraw(int summ) {
-        // снимает деньги с баланса с комиссией 5%, если сумма < 1000 и комиссией 10% в других случаях
+    // снимает деньги с баланса с комиссией 5%, если сумма < 1000 и комиссией 10% в других случаях
+    void withdraw(int summ) {
+        double percent = 0.1;
+        if (summ < 1000) {
+            percent = 0.05;
+        }
+        this.balance -= (int)(summ + (summ * percent));
     }
 
-    companyNameLenght() {
-        // вычисляет длину имя компании
+    //вычисляет длину имя компании
+    public int companyNameLenght() {
+        return this.companyName.length();
     }
 
-    monthIncreaser(int addMonth) {
-        // увеличивает monthsOfEmployment на addMonth
+    // увеличивает monthsOfEmployment на addMonth
+    public int monthIncreaser(int addMonth) {
+        return this.monthsOfEmployment += addMonth;
     }
 
     // Setters
