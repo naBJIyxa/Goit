@@ -13,19 +13,25 @@ public class Solution {
         Course courseJava = new Course("Java", 50, "Teacher-Java");
         Course coursePhp = new Course("Php", 40, "Teacher-Php");
         Course courseMysql = new Course("Mysql", 30, "Teacher-Mysql");
-        Course courseJavascript = new Course(date,"John");
-        Course courseSass = new Course(date,"Bob");
+        Course courseJavascript = new Course(date, "John");
+        Course courseSass = new Course(date, "Bob");
 
-        Student student1 = new Student("Red", "Wilson", 5);
-        Student student2 = new Student("Ron",coursesTaken);
+        coursesTaken[0] = courseJava;
+        coursesTaken[1] = coursePhp;
+        coursesTaken[2] = courseMysql;
+        coursesTaken[3] = courseJavascript;
+        coursesTaken[4] = courseSass;
+
+        Student student1 = new Student("Red", "Wilson", 55);
+        Student student2 = new Student("Ron", coursesTaken);
 
         CollegeStudent collegeStudent = new CollegeStudent("Don", coursesTaken);
-        CollegeStudent collegeStudent1 = new CollegeStudent("Michel", "Toy",87);
-        CollegeStudent collegeStudent2 = new CollegeStudent("Robinson", coursesTaken, "GoIT", 80,1234567890);
+        CollegeStudent collegeStudent1 = new CollegeStudent("Michel", "Toy", 87);
+        CollegeStudent collegeStudent2 = new CollegeStudent("Robinson", coursesTaken, "GoIT", 80, 1234567890);
 
-        SpecialStudent specialStudent = new SpecialStudent("Bean",coursesTaken);
-        SpecialStudent specialStudent1 = new SpecialStudent("Holly", coursesTaken, "GoIT", 99,987654321);
-        SpecialStudent specialStudent2 = new SpecialStudent("Jonathan", coursesTaken, 983456938, "test@test.com");
+        SpecialStudent specialStudent = new SpecialStudent("Bean", coursesTaken);
+        SpecialStudent specialStudent1 = new SpecialStudent("Holly", coursesTaken, "GoIT", 99, 987654321);
+        SpecialStudent specialStudent2 = new SpecialStudent("Jonathan", coursesTaken, 983456938);
 
     }
 

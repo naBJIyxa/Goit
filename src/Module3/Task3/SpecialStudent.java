@@ -13,10 +13,9 @@ public class SpecialStudent extends CollegeStudent {
         super(lastName, coursesTaken, collegeName, rating, id);
     }
 
-    public SpecialStudent(String lastName, Course[] coursesTaken, long secretKey, String email) {
+    public SpecialStudent(String lastName, Course[] coursesTaken, long secretKey) {
         super(lastName, coursesTaken);
         this.secretKey = secretKey;
-        this.email = email;
     }
 
     //Setters
