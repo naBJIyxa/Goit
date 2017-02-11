@@ -13,8 +13,8 @@ public class User {
         User user = new User("Bob", 100000, 6, "GoIT", 9999, "грн.");
         user.withdraw(99999);
         user.paySalary(10000);
-        System.out.println(user.companyNameLenght());
-        System.out.println(user.monthIncreaser(4));
+        System.out.println("метод companyNameLenght = " + user.companyNameLenght());
+        System.out.println("метод monthIncreaser = " + user.monthIncreaser(4));
     }
 
     public User(String name, int balance, int monthsOfEmployment, String companyName, int salary, String currency) {
@@ -29,7 +29,7 @@ public class User {
     // добавляет заработную плату к балансу пользователя
     void paySalary(int salary) {
         this.balance += salary;
-        System.out.println(this.balance);
+        System.out.println("метод paySalary =" +this.balance + " " + this.currency);
     }
 
     // снимает деньги с баланса с комиссией 5%, если сумма < 1000 и комиссией 10% в других случаях
@@ -40,11 +40,11 @@ public class User {
         }
         int transaction = (int)(summ + (summ * percent));
         if (this.balance < transaction) {
-            System.out.println("Невозможно снять больше чем есть в наличии");
+            System.out.println("метод withdraw = Невозможно снять больше чем есть в наличии");
             return;
         } else {
             this.balance -= transaction;
-            System.out.println(balance);
+            System.out.println("метод withdraw = " + this.balance + " " + this.currency);
         }
     }
 
