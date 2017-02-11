@@ -21,3 +21,12 @@ public class CollegeStudent extends Student {
         this.id = id;
     }
 }
+
+
+/*
+
+CollegeStudent унаследован от Student.
+        Дополнительные поля: String collegeName, int rating, long id.
+        Создайте 3 конструктора: 2 таких же, как и в Student and один с аргументами - всеми полями класса.
+
+ */

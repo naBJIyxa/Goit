@@ -2,8 +2,16 @@ package Module3.Task3;
 
 public class SpecialStudent extends CollegeStudent {
 
-    long secretKey;
-    String email;
+    private long secretKey;
+    private String email;
+
+    public SpecialStudent(String lastName, Course[] coursesTaken) {
+        super(lastName, coursesTaken);
+    }
+
+    public SpecialStudent(String lastName, Course[] coursesTaken, String collegeName, int rating, long id) {
+        super(lastName, coursesTaken, collegeName, rating, id);
+    }
 
     public SpecialStudent(String lastName, Course[] coursesTaken, long secretKey, String email) {
         super(lastName, coursesTaken);
@@ -11,3 +19,11 @@ public class SpecialStudent extends CollegeStudent {
         this.email = email;
     }
 }
+
+/*
+
+Class SpecialStudent унаследован от CollegeStudent.
+        Дополнительные поля long secretKey, String email.
+        Создайте 3 конструктора: 2 таких же, как и в CollegeStudent и один с аргументом secretKey.
+
+ */
