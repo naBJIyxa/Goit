@@ -31,7 +31,7 @@ public class Solution {
 
         SpecialStudent specialStudent = new SpecialStudent("Bean", coursesTaken);
         SpecialStudent specialStudent1 = new SpecialStudent("Holly", coursesTaken, "GoIT", 99, 987654321);
-        SpecialStudent specialStudent2 = new SpecialStudent("Jonathan", coursesTaken, 983456938);
+        SpecialStudent specialStudent2 = new SpecialStudent(983456938);
 
     }
 
