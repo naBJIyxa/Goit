@@ -14,7 +14,7 @@ public class SpecialStudent extends CollegeStudent {
     }
 
     public SpecialStudent(long secretKey) {
-        super("", null);
+        super("", null, "", 0, 0);
         this.secretKey = secretKey;
     }
 
