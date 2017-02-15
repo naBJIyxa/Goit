@@ -8,19 +8,13 @@ public class Solution {
 
         Date date = new Date();
 
-        Course[] coursesTaken = new Course[5];
-
         Course courseJava = new Course("Java", 50, "Teacher-Java");
         Course coursePhp = new Course("Php", 40, "Teacher-Php");
         Course courseMysql = new Course("Mysql", 30, "Teacher-Mysql");
         Course courseJavascript = new Course(date, "John");
         Course courseSass = new Course(date, "Bob");
 
-        coursesTaken[0] = courseJava;
-        coursesTaken[1] = coursePhp;
-        coursesTaken[2] = courseMysql;
-        coursesTaken[3] = courseJavascript;
-        coursesTaken[4] = courseSass;
+        Course[] coursesTaken = new Course[]{courseJava, coursePhp, courseMysql, courseJavascript, courseSass};
 
         Student student1 = new Student("Red", "Wilson", 55);
         Student student2 = new Student("Ron", coursesTaken);
