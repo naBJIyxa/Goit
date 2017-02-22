@@ -1,6 +1,6 @@
-package Module4;
+package Module4.Task1;
 
-import Module4.Currency;
+import Module4.Task2.Currency;
 
 public abstract class Bank {
 
@@ -12,6 +12,7 @@ public abstract class Bank {
     private long rating;
     private long totalCapital;
 
+    //Constructor
     public Bank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
         this.id = id;
         this.bankCountry = bankCountry;
@@ -23,12 +24,23 @@ public abstract class Bank {
     }
 
     //Methods
-    abstract int getLimitOfWithdrawal();
-    abstract int getLimitOfFunding();
-    abstract int getMonthlyRate();
-    abstract int getCommission(int summ);
+    public abstract int getLimitOfWithdrawal();
+    public abstract int getLimitOfFunding();
+    public abstract int getMonthlyRate();
+    public abstract double getCommission(int summ);
     double moneyPaidMonthlyForSalary() {
         return 0;
+    }
+
+    @Override
+    public String toString() {
+        return "The bank ID is: " + id + ";\n" +
+                "The bank country is: " + bankCountry + ";\n" +
+                "The bank reporting currency is: " + currency + ";\n" +
+                "The bank employs " + numberOfEmployees + " people;\n" +
+                "The average salary of the employees is:" + avrSalaryOfEmployee + ";\n" +
+                "The bank's rating is:" + rating + " ;\n" +
+                "The bank's total capital is:" + totalCapital + " ;\n";
     }
 
     //Setters

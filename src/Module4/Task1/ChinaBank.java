@@ -1,6 +1,6 @@
-package Module4;
+package Module4.Task1;
 
-import java.util.*;
+import Module4.Task2.Currency;
 
 public class ChinaBank extends Bank {
 
@@ -9,27 +9,23 @@ public class ChinaBank extends Bank {
     }
 
     @Override
-    int getLimitOfWithdrawal() {
+    public int getLimitOfWithdrawal() {
         return 0;
     }
 
     @Override
-    int getLimitOfFunding() {
+    public int getLimitOfFunding() {
         return 0;
     }
 
     @Override
-    int getMonthlyRate() {
+    public int getMonthlyRate() {
         return 0;
     }
 
     @Override
-    int getCommission(int summ) {
+    public double getCommission(int summ) {
         return 0;
     }
 
-    @Override
-    double moneyPaidMonthlyForSalary() {
-        return 0;
-    }
 }

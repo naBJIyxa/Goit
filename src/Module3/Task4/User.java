@@ -112,7 +112,6 @@ public class User {
 
 
 /*
-
 ЗАДАНИЕ 4
 Создайте класс User со следующими полями:
  String name,
@@ -121,28 +120,18 @@ public class User {
  String companyName,
  int salary,
  String currency.
-
 Создайте get-, set-методы и конструктор с аргументами - всеми полями класса.
 Напишите методы:
  void paySalary() - добавляет заработную плату к балансу пользователя
  withdraw(int summ) - снимает деньги с баланса с комиссией 5%, если сумма < 1000 и комиссией 10% в других случаях
  companyNameLenght - вычисляет длину имя компании
  monthIncreaser(int addMonth) - увеличивает monthsOfEmployment на addMonth
-
-
-
-
  ЗАДАНИЕ 4
-
 Create User class with the following fields: String name, int balance, int monthsOfEmployment, String companyName, int salary, String currency.
-
 Create getters and setters and constructor with all fileds.
-
 Write methods:
-
 void paySalary() -  that add salary to the balance of the user
 withdraw(int summ) - takes money from the balance with 5% commision if summ < 1000 and 10% commision in other cases
 companyNameLenght - calculates name of the company name
 monthIncreaser(int addMonth) - increase monthsOfEmployment by addMonth
-
  */
