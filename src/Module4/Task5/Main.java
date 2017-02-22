@@ -6,9 +6,9 @@ import Module4.Task2.Currency;
 
 public class Main {
     public static void main(String[] args) {
-        USBank usBank = new USBank(12, "Cuba", Currency.USD, 12, 20, 50, 20000);
+        USBank usBank = new USBank(111111, "Cuba", Currency.USD, 12, 20, 50, 20000000);
 
-        User Poll = new User(101,"Poll",30000,12,"Anna Co",3000, usBank);
+        User Poll = new User(12,"Poll",500000,6,"Poll's company",4000, usBank);
 
 
         System.out.println(usBank);

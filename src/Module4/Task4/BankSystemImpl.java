@@ -4,26 +4,24 @@ import Module4.Task1.Bank;
 import Module4.Task3.User;
 
 public class BankSystemImpl implements BankSystem {
+
     @Override
     public void withdrawOfUser(User user, int amount) {
-        double balance, w;
+
+        double balance, amountWithCommission;
         Bank bank;
 
-        // get balance and bank of user
         balance = user.getBalance();
         bank = user.getBank();
 
-        // restate amount with commissions
-        w = amount + bank.getCommission(amount);
-
-        // check if amount is higher than balance or higher than authorized maximum
+        amountWithCommission = amount + bank.getCommission(amount);
 
         if (balance > bank.getLimitOfWithdrawal()){
             System.out.println("You cannot withdraw this amount. Maximum authorized withdrawal is " + bank.getLimitOfWithdrawal());
-        } else if (w > balance){
+        } else if (amountWithCommission > balance){
             System.out.println("Your balance is too low to withdraw " + amount +". Your balance is: " + balance);
         }else{
-            user.setBalance(balance - w);
+            user.setBalance(balance - amountWithCommission);
             System.out.println("Please take your cash.\nYou have withdrawn" +
                     amount+". Your commissions for this transaction were " + bank.getCommission(amount) +
                     ".\nYour new balance is: " + user.getBalance()+".\nThank you for your business.");
@@ -31,26 +29,21 @@ public class BankSystemImpl implements BankSystem {
 
     }
 
-
     @Override
     public void fundUser(User user, int amount) {
 
-        double balance, w;
+        double balance, amountWithCommission;
         Bank bank;
 
-        // get balance and bank of user
         balance = user.getBalance();
         bank = user.getBank();
 
-        // restate amount with commissions
-        w = amount - bank.getCommission(amount);
-
-        // check if amount is higher than authorized maximum
+        amountWithCommission = amount - bank.getCommission(amount);
 
         if (balance > bank.getLimitOfFunding()){
             System.out.println("You cannot fund this amount. Maximum authorized funding is " + bank.getLimitOfFunding());
         } else{
-            user.setBalance(balance + w);
+            user.setBalance(balance + amountWithCommission);
             System.out.println("You have deposited " +
                     amount+". Your commissions for this transaction were " + bank.getCommission(amount) +
                     ".\nYour new balance is: " + user.getBalance()+".\nThank you for your business.");
@@ -61,34 +54,28 @@ public class BankSystemImpl implements BankSystem {
     @Override
     public void transferMoney(User fromUser, User toUser, int amount) {
 
-        double balanceFrom, balanceTo, wFrom, wTo;
+        double balanceFrom, balanceTo, amountWithCommissionFrom, amountWithCommissionTo;
         Bank bankFrom, bankTo;
 
-        // get balance and bank of user sending money
         balanceFrom = fromUser.getBalance();
         bankFrom = fromUser.getBank();
 
-        // get bank of user receiving money and balance
         balanceTo = toUser.getBalance();
         bankTo = toUser.getBank();
 
-        // get full amount of transfer, with commissions
-        wFrom = amount + bankFrom.getCommission(amount);
-        wTo = amount - bankTo.getCommission(amount);
+        amountWithCommissionFrom = amount + bankFrom.getCommission(amount);
+        amountWithCommissionTo = amount - bankTo.getCommission(amount);
 
-        // check if transaction allowed (balance, withdrawal limit, deposit limit)
-        // if transaction allowed, proceed with transaction (withdraw, credit, and print message).
-
-        if (wFrom > bankFrom.getLimitOfWithdrawal()){
+        if (amountWithCommissionFrom > bankFrom.getLimitOfWithdrawal()){
             System.out.println("You cannot withdraw this amount. Maximum authorized withdrawal is " + bankFrom.getLimitOfWithdrawal());
-        } else if (wFrom > balanceFrom){
+        } else if (amountWithCommissionFrom > balanceFrom){
             System.out.println("Your balance is too low to transfer " + amount +". Your balance is: " + balanceFrom);
-        }else if (wTo > bankTo.getLimitOfFunding()){
+        }else if (amountWithCommissionTo > bankTo.getLimitOfFunding()){
             System.out.println("You cannot credit this amount to beneficiary. Maximum authorized funding is " + bankTo.getLimitOfFunding());
         } else {
             // set balances
-            fromUser.setBalance(balanceFrom - wFrom);
-            toUser.setBalance(balanceTo + wTo);
+            fromUser.setBalance(balanceFrom - amountWithCommissionFrom);
+            toUser.setBalance(balanceTo + amountWithCommissionTo);
             // print success message
             System.out.println("Transaction is complete: " + fromUser.getName() + " has transferred " + amount + " to " +
                     toUser.getName() + ".\n" + fromUser.getName() + ", you have paid " + bankFrom.getCommission(amount) +
@@ -102,7 +89,6 @@ public class BankSystemImpl implements BankSystem {
     @Override
     public void paySalary(User user) {
 
-        // credit salary to account
         fundUser(user, user.getSalary());
 
     }
