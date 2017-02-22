@@ -6,20 +6,29 @@ public class USBank extends Bank {
         super(id, bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
     }
 
+    private double limitWithdrawalUSD = 1000;
+    private double limitWithdrawalEUR = 1200;
+
+
     @Override
     int getLimitOfWithdrawal() {
-        double limit;
-        if (getCurrency() == Currency.USD) limit = 1000;
-        else {
-            limit = 1200;
-        }
 
+        double limit;
+        if (getCurrency() == Currency.USD) {
+            limit = limitWithdrawalUSD;
+        }
+        else if (getCurrency() == Currency.EUR) {
+            limit = limitWithdrawalEUR;
+        }
+        else limit = 0;
         return (int)limit;
     }
 
     @Override
     int getLimitOfFunding() {
-        return 0;
+        double limit;
+
+        return 0; //(int)limit;
     }
 
     @Override
@@ -46,3 +55,4 @@ USBank:
 - комиссия 5%, если USD и до 1000, 7%, если USD и больше 1000
 6%, если EUR и до 1000 и 8%, если EUR и больше 1000
 */
+
