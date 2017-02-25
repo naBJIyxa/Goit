@@ -73,10 +73,8 @@ public class BankSystemImpl implements BankSystem {
         }else if (amountWithCommissionTo > bankTo.getLimitOfFunding()){
             System.out.println("You cannot credit this amount to beneficiary. Maximum authorized funding is " + bankTo.getLimitOfFunding());
         } else {
-            // set balances
             fromUser.setBalance(balanceFrom - amountWithCommissionFrom);
             toUser.setBalance(balanceTo + amountWithCommissionTo);
-            // print success message
             System.out.println("Transaction is complete: " + fromUser.getName() + " has transferred " + amount + " to " +
                     toUser.getName() + ".\n" + fromUser.getName() + ", you have paid " + bankFrom.getCommission(amount) +
                     " in commissions and your new balance is now: " + fromUser.getBalance() + ".\n"+
